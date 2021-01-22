@@ -26,4 +26,19 @@ fdescribe('FilterComponent', () => {
     expect(component.FILTER_YEARS.length).toEqual(15);
     expect(component.LAUNCH_STATUS.length).toEqual(2);
   });
+
+  it('should toggle the year', () => {
+    component.launch_year = '2010';
+    expect(component.toggleSelection('launch_year', '2010')).toBe(false);
+  });
+
+  it('should toggle the launch success', () => {
+    component.launch_success = 'true';
+    expect(component.toggleSelection('launch_success', 'true')).toBe(false);
+  });
+
+  it('should toggle the landing success', () => {
+    component.landing_success = 'true';
+    expect(component.toggleSelection('landing_success', 'true')).toBe(false);
+  });
 });

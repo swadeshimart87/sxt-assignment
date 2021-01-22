@@ -40,7 +40,6 @@
     .header-text {
         font-weight: bold;
         color: $text-color;
-        // margin-right: 16px;
         width: min(80%, 300px);
         margin: 0 auto;
         overflow-wrap: break-word;
@@ -51,8 +50,10 @@
         flex-direction: column;
         width: min(80%, 300px);
         margin: 0 auto;
-        ul li {
+        ul, li {
             font-size: 14px;
+            margin: 0;
+            line-height: 24px;
         }
     }
     .launch-year {
