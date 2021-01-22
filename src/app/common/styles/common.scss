@@ -1,0 +1,29 @@
+@mixin mobile {
+    @media only screen and (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: 701px) and (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: 1025px) {
+        @content;
+    }
+}
+
+@mixin desktopX {
+    @media only screen and (min-width: 1441px) {
+        @content;
+    }
+}
+
+$background-color: #F2F2F2;
+$light-grey: #f3f3f3;
+$text-color: #000000;
+$white: #FFFFFF;
+$card-title-color: #4287f5;

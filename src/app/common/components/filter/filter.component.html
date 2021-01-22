@@ -1,0 +1,24 @@
+<div class="container">
+    <span class="title">Filters</span>
+    <span class="filter-title">Launch Year</span>
+    <hr>
+    <div class="filter-container">
+        <ng-container *ngFor="let year of FILTER_YEARS">
+            <a [routerLink]="['../']" [queryParams]="{launch_year: year}"  [queryParamsHandling]="'merge'" [routerLinkActive]="'active-a'" [routerLinkActiveOptions]="{ exact: false }"><p>{{year}}</p></a>
+        </ng-container>
+    </div>
+    <span class="filter-title">Successful Launch</span>
+    <hr>
+    <div class="filter-container">
+        <ng-container *ngFor="let status of LAUNCH_STATUS">
+            <a [routerLink]="['../']" [queryParams]="{launch_success: status}"  [queryParamsHandling]="'merge'" [routerLinkActive]="'active-a'" [routerLinkActiveOptions]="{ exact: false }"><p>{{status}}</p></a>
+        </ng-container>
+    </div>
+    <span class="filter-title">Successful Landing</span>
+    <hr>
+    <div class="filter-container">
+        <ng-container *ngFor="let status of LAUNCH_STATUS">
+            <a [routerLink]="['../']" [queryParams]="{land_success: status}"  [queryParamsHandling]="'merge'" [routerLinkActive]="'active-a'" [routerLinkActiveOptions]="{ exact: false }"><p>{{status}}</p></a>
+        </ng-container>
+    </div>
+</div>

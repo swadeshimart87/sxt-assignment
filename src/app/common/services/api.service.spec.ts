@@ -1,14 +1,10 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
-import { FilterComponent } from './common/components/filter/filter.component';
-import { LoaderComponent } from './common/components/loader/loader.component';
-import { CardComponent } from './common/components/card/card.component';
-import { from, of } from 'rxjs';
-import { ApiService } from './common/services/api.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { TestBed } from '@angular/core/testing';
 
-fdescribe('AppComponent', () => {
+import { ApiService } from './api.service';
+import { UrlService } from './url.service';
+import { from } from 'rxjs';
+
+fdescribe('ApiService', () => {
   const mockData = [{
     'flight_number':26,
     'mission_name':'Jason 3',
@@ -363,45 +359,21 @@ fdescribe('AppComponent', () => {
     'crew':null
     }];
 
-  const mockApi: any = {
-    getAllPrograms: jasmine.createSpy('getAllPrograms').and.returnValue(from([mockData]))
-  }
+  let service: ApiService;
+  let httpClientSpy: any;
 
-  beforeEach(async(() => {
-    // const params  = new Params();
-    // params.set('launch_year', 2016);
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent,
-        FilterComponent,
-        LoaderComponent,
-        CardComponent
-      ],
-      providers: [
-        {provide: ApiService, useValue: mockApi}
-      ]
-    }).compileComponents();
-  }));
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    TestBed.configureTestingModule({});
+    service = new ApiService(httpClientSpy, new UrlService());
   });
 
-  it(`should have as title 'SpaceX Launch Programs'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('SpaceX Launch Programs');
+  it('should be created', () => {
+    expect(service).toBeTruthy();
   });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(' SpaceX Launch Programs ');
+  it('should return all records', () => {
+    httpClientSpy.get.and.returnValue(from(mockData));
+    expect(service.getAllPrograms()).toBeDefined();
   });
 });
