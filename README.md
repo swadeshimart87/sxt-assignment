@@ -21,6 +21,10 @@ Angular Universal is used to do server side rendering of the app
     <img src="/screenshots/lh3.png" width="400px"</img> 
 </div>
 
+<div align="center">
+    <img src="/screenshots/lh4.png" width="400px"</img> 
+</div>
+
 ## Deployment
 npm build - to build the command
 npm start - to start the server
