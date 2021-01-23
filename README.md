@@ -10,15 +10,15 @@ Angular Universal is used to do server side rendering of the app
 
 ## Lighhouse Screenshots
 <div align="center">
-    <img src="/screenshots/lh1.jpg" width="400px"</img> 
+    <img src="/screenshots/lh1.png" width="400px"</img> 
 </div>
 
 <div align="center">
-    <img src="/screenshots/lh2.jpg" width="400px"</img> 
+    <img src="/screenshots/lh2.png" width="400px"</img> 
 </div>
 
 <div align="center">
-    <img src="/screenshots/lh3.jpg" width="400px"</img> 
+    <img src="/screenshots/lh3.png" width="400px"</img> 
 </div>
 
 ## Deployment
