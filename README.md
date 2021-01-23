@@ -8,6 +8,19 @@ Angular routing is used to fetch events and Angular's @Input is used to communic
 Jasmine is used to mock the services
 Angular Universal is used to do server side rendering of the app
 
+## Lighhouse Screenshots
+<div align="center">
+    <img src="/screenshots/lh1.jpg" width="400px"</img> 
+</div>
+
+<div align="center">
+    <img src="/screenshots/lh2.jpg" width="400px"</img> 
+</div>
+
+<div align="center">
+    <img src="/screenshots/lh3.jpg" width="400px"</img> 
+</div>
+
 ## Deployment
 npm build - to build the command
 npm start - to start the server
