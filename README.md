@@ -33,5 +33,8 @@ Angular Universal is used to do server side rendering of the app
 
 ## Deployment
 npm build - to build the command
+
 npm start - to start the server
+
 npm test - to start unit tests
+
