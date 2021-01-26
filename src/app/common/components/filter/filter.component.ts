@@ -11,7 +11,7 @@ export class FilterComponent implements OnInit {
   LAUNCH_STATUS = [true, false];
   launch_year: string;
   launch_success: string;
-  landing_success: string;
+  land_success: string;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -23,7 +23,7 @@ export class FilterComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       this.launch_year = params['launch_year'];
       this.launch_success = params['launch_success'];
-      this.landing_success = params['landing_success'];
+      this.land_success = params['land_success'];
     });
   }
 
@@ -44,11 +44,11 @@ export class FilterComponent implements OnInit {
         }
       });
       return false;
-    } else if (butonType === 'landing_success' && String(text) === this.landing_success) {
+    } else if (butonType === 'land_success' && String(text) === this.land_success) {
       this.router.navigate([], {
         queryParamsHandling: 'merge',
         queryParams: {
-          landing_success: undefined
+          land_success: undefined
         }
       });
       return false;
