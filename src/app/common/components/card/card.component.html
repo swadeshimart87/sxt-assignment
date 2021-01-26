@@ -17,6 +17,6 @@
     </div>
     <div class="launch-year">
         <span class="header-text">Successful Landing:</span>
-        <span>{{data.rocket.first_stage.cores[0].land_success ? true : false}}</span>
+        <span>{{data.rocket.first_stage.cores[0].land_success === undefined ? 'NA' : data.rocket.first_stage.cores[0].land_success}}</span>
     </div>
 </div>
