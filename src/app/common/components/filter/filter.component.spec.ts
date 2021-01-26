@@ -38,7 +38,7 @@ fdescribe('FilterComponent', () => {
   });
 
   it('should toggle the landing success', () => {
-    component.landing_success = 'true';
-    expect(component.toggleSelection('landing_success', 'true')).toBe(false);
+    component.land_success = 'true';
+    expect(component.toggleSelection('land_success', 'true')).toBe(false);
   });
 });
