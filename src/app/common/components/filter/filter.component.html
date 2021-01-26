@@ -18,7 +18,7 @@
     <hr>
     <div class="filter-container">
         <ng-container *ngFor="let status of LAUNCH_STATUS">
-            <a (click)="toggleSelection('landing_success', status)" [routerLink]="['../']" [queryParams]="{land_success: status}"  [queryParamsHandling]="'merge'" [routerLinkActive]="'active-a'" [routerLinkActiveOptions]="{ exact: false }"><p>{{status}}</p></a>
+            <a (click)="toggleSelection('land_success', status)" [routerLink]="['../']" [queryParams]="{land_success: status}"  [queryParamsHandling]="'merge'" [routerLinkActive]="'active-a'" [routerLinkActiveOptions]="{ exact: false }"><p>{{status}}</p></a>
         </ng-container>
     </div>
 </div>
